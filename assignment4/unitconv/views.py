@@ -8,6 +8,8 @@ def convert(request):
     value = request.GET.get("value", "error")
     try:
         float(value)
+        if float(value) < 0:
+            raise
     except:
         json = {'error': "Invalid unit conversion request"}
     else:

@@ -25,6 +25,7 @@ function unitconvApi(){
 
 function createDiv(){
     var div, p, mainDiv;
+    mainDiv = document.getElementById("mainDiv");
     if (data.error === "Invalid unit conversion request"){
         div = document.createElement("div");
         p = document.createElement("p");
@@ -32,7 +33,6 @@ function createDiv(){
         div.appendChild(p);
         div.setAttribute("onclick", "this.remove()");
         div.setAttribute("style", "cursor: pointer;");
-        mainDiv = document.getElementById("mainDiv");
         mainDiv.insertAdjacentElement("afterend", div);
         return 1
     }
@@ -43,7 +43,6 @@ function createDiv(){
     div.appendChild(p);
     div.setAttribute("onclick", "this.remove()");
     div.setAttribute("style", "cursor: pointer;");
-    mainDiv = document.getElementById("mainDiv");
     mainDiv.insertAdjacentElement("afterend", div);
     return 0
 }
