@@ -18,7 +18,7 @@ def populate_db(apps, schema_editor):
     """
 
     Factor = apps.get_model('unitconv', 'Factor')
-    f = Factor(t_oz = 1, lb = 0.068571, oz = 0.068571 * 16, ton = 0.068571 / 2000, kg = 0.068571 * 0.45359237, g = 0.068571 * 0.45359237 * 1000)
+    f = Factor(t_oz = 1.0, lb = 14.5833, oz = 0.911458, ton = 29166.7, kg = 32.1507, g = 0.0321507)
     f.save()
 
 class Migration(migrations.Migration):

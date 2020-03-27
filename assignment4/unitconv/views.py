@@ -3,13 +3,15 @@ from django.http import JsonResponse
 from .models import Factor
 
 def convert(request):
-    getParams = request.GET.items()
-    value = getParams['value']
-    if value <= 0:
+    fr0m = request.GET.get("from", "error")
+    fr0m = fr0m.lower()
+    value = request.GET.get("value", "error")
+    try:
+        float(value)
+    except:
         json = {'error': "Invalid unit conversion request"}
     else:
-        fr0m = getParams['from']
         c = Factor.objects.get(pk=1)
-        factors = {'t_oz': c.t_oz, "lb": c.lb, "oz": c.oz, "ton": c.ton, "kg": c.kg, "g": c.g}
-        json = {'units': fr0m, 'value': factors[fr0m]*value}
+        factors = {'troy ounce': c.t_oz, "imperial pound": c.lb, "ounce": c.oz, "ton": c.ton, "kilogram": c.kg, "gram": c.g}
+        json = {'units': fr0m, 'value': (factors[fr0m]*float(value))}
     return JsonResponse(json)

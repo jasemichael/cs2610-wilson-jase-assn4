@@ -3,6 +3,6 @@ from . import views
 
 app_name = "gold"
 urlpatterns = [
-    path('gold/', views.index, name="index"),
+    path('', views.index, name="index"),
 
 ]

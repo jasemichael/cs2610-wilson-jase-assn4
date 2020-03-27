@@ -3,6 +3,6 @@ from . import views
 
 app_name = "unitconv"
 urlpatterns = [
-    path('unitconv/convert/', views.convert, name="convert"),
+    path('convert/', views.convert, name="convert"),
 
 ]

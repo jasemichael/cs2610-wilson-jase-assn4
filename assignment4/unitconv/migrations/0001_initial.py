@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
             name='Factor',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('t_oz', models.IntegerField()),
-                ('lb', models.IntegerField()),
-                ('oz', models.IntegerField()),
-                ('ton', models.IntegerField()),
-                ('kg', models.IntegerField()),
-                ('g', models.IntegerField()),
+                ('t_oz', models.FloatField()),
+                ('lb', models.FloatField()),
+                ('oz', models.FloatField()),
+                ('ton', models.FloatField()),
+                ('kg', models.FloatField()),
+                ('g', models.FloatField()),
             ],
         ),
     ]
